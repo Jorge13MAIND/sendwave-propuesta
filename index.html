@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#FFEC00">
+  <title>Sendwave Content Hub · Propuesta de Teckel AI</title>
+  <meta name="description" content="Propuesta de Teckel AI para Sendwave LatAm: un hub donde cada video de influencer se pre-aprueba con IA contra las reglas de su país y el equipo da el OK en un solo lugar.">
+  <link rel="icon" href="assets/sendwave-symbol.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<a class="salto" href="#contenido">Ir al contenido</a>
+<header class="barra">
+  <a class="marca" href="#inicio"><img src="assets/sendwave-symbol.svg" alt="" width="30" height="30"><span><b>Sendwave</b> Content Hub</span></a>
+  <nav class="nav" aria-label="Secciones">
+    <a href="#contexto">Lo que nos platicaron</a>
+    <a href="#como">Cómo funciona</a>
+    <a href="#demo">El demo</a>
+    <a href="#plan">Plan</a>
+    <a href="#inversion">Inversión</a>
+    <a href="#siguiente">Siguiente paso</a>
+  </nav>
+  <a class="btn btn-sol btn-chico" href="https://sendwave-demo.vercel.app" target="_blank" rel="noopener">Abrir el demo</a>
+</header>
+
+<main id="contenido">
+
+<!-- 1 · Portada -->
+<section class="hero" id="inicio">
+  <div class="hero-texto">
+    <p class="ojo">Propuesta para Sendwave LatAm · 16 de septiembre de 2026 · preparada por Teckel AI</p>
+    <h1>Cada video revisado <em>antes</em> de que lo vea el equipo.</h1>
+    <p class="lead">Un hub donde el influencer sube su video, la IA lo transcribe, lo mira frame por frame y lo contrasta con las reglas de <b>su país</b> en dos minutos. Lo que no cumple regresa al influencer con instrucciones exactas. Lo que cumple llega al equipo para el OK humano, en español para LatAm y en inglés para Brand. Un solo lugar, con historial de todo.</p>
+    <div class="fila">
+      <a class="btn btn-cacao" href="https://sendwave-demo.vercel.app" target="_blank" rel="noopener">Probar el demo funcional</a>
+      <a class="btn btn-linea" href="#inversion">Ver la inversión</a>
+    </div>
+    <ul class="hero-datos">
+      <li><b>2 min</b><span>del video subido al veredicto con marcas de tiempo</span></li>
+      <li><b>8 países</b><span>reglas globales y bancos receptores por país</span></li>
+      <li><b>ES · EN</b><span>el mismo video explicado a LatAm y a Brand</span></li>
+    </ul>
+  </div>
+  <div class="hero-demo" aria-label="Verificador de guion en vivo">
+    <div class="verificador">
+      <p class="ojo">Pruébalo aquí · escribe lo que diría tu influencer</p>
+      <textarea id="guion" rows="5" spellcheck="false">Hola, soy Jorge. Yo mando dinero a mi familia en México con Sendwave. Es gratis, sin comisiones, y llega al instante. Hoy el dólar está a 18.50. Usa mi código JORGE10 al registrarte.</textarea>
+      <div class="veredicto" id="veredicto"></div>
+      <div class="hallazgos" id="hallazgos"></div>
+      <p class="chico muted">Este verificador corre en tu navegador con seis reglas de ejemplo. El demo real transcribe el audio, analiza los frames y usa las reglas completas por país.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · Contexto -->
+<section class="seccion" id="contexto">
+  <p class="ojo">01 · Lo que nos platicaron</p>
+  <h2>Siete personas, 95 campañas, y cada video pasa por tres canales antes de publicarse.</h2>
+  <div class="cifras">
+    <div class="cifra"><b>95</b><span>campañas activas en LatAm</span></div>
+    <div class="cifra"><b>7</b><span>personas en el equipo</span></div>
+    <div class="cifra"><b>120 a 160</b><span>videos al mes, más historias</span></div>
+    <div class="cifra"><b>2</b><span>aprobaciones obligatorias por pieza</span></div>
+    <div class="cifra"><b>USD 20 M</b><span>la multa reciente por una frase en otra región</span></div>
+    <div class="cifra"><b>vie → dom</b><span>lo que esperaron 15 videos el fin de semana</span></div>
+  </div>
+  <div class="dos">
+    <div>
+      <h3>El flujo de hoy</h3>
+      <ol class="flujo flujo-hoy">
+        <li>El influencer manda el video al grupo de WhatsApp de su campaña.</li>
+        <li>Alguien del equipo LatAm lo ve, pide cambios, espera la versión nueva.</li>
+        <li>Lo sube a Slack para el segundo OK de la Senior Brand Manager, que no habla español.</li>
+        <li>Regresa al influencer: "ya puedes publicar".</li>
+        <li>El link se guarda a mano en Monday (lo exige el regulador).</li>
+        <li>Alcance y engagement se copian de Modash a Excel.</li>
+      </ol>
+    </div>
+    <div>
+      <h3>Las tres fricciones, en el orden que las puso Jorge</h3>
+      <div class="fricciones">
+        <div class="friccion"><span class="n">1</span><div><b>Revisar y aprobar los videos.</b> Horas viendo TikToks para encontrar la frase que no se puede decir. Y la persona que da el OK final los ve sin entender el idioma.</div></div>
+        <div class="friccion"><span class="n">2</span><div><b>Saturación de canales.</b> Un grupo de WhatsApp por campaña, un canal de Slack, y ningún lugar que diga cuántos videos están esperando y desde cuándo.</div></div>
+        <div class="friccion"><span class="n">3</span><div><b>Carga manual repetida.</b> La misma información en WhatsApp, Slack, Monday y Excel, tecleada por las mismas personas.</div></div>
+      </div>
+      <p class="cita">"Todo el tiempo nos traen de los huevos con no mencionar algo que se pueda malinterpretar como publicidad engañosa, porque nos acaban multando."</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · Cómo funciona -->
+<section class="seccion seccion-cacao" id="como">
+  <p class="ojo">02 · Cómo funciona</p>
+  <h2>El influencer sube. La IA revisa. El equipo decide. Todo queda registrado.</h2>
+  <div class="pasos">
+    <div class="paso">
+      <span class="n">1</span>
+      <h3>Alta del influencer</h3>
+      <p>Entra con un código que le da el equipo. Registra su país, su código promocional y su campaña. Con eso el sistema sabe qué bancos existen en su país y qué código tiene que decir.</p>
+    </div>
+    <div class="paso">
+      <span class="n">2</span>
+      <h3>Sube el video desde su teléfono</h3>
+      <p>Reel, TikTok, story o YouTube. No hay grupo de WhatsApp que monitorear: el video llega al hub y nada más.</p>
+    </div>
+    <div class="paso">
+      <span class="n">3</span>
+      <h3>La IA lo pre-aprueba en dos minutos</h3>
+      <p>Transcribe el audio con marcas de tiempo, muestrea los frames y lee el texto en pantalla. Contrasta todo con las reglas globales (tipo de cambio, "gratis", "al instante", divulgación, código) y con las de su país (bancos receptores, métodos, moneda). Devuelve un veredicto, la lista de reglas revisadas y, para cada falla, el segundo exacto, la frase textual y qué cambiar.</p>
+    </div>
+    <div class="paso">
+      <span class="n">4</span>
+      <h3>Si falla, regresa solo</h3>
+      <p>El influencer ve en su pantalla qué corregir y sube la versión nueva. El equipo no gastó un minuto.</p>
+    </div>
+    <div class="paso">
+      <span class="n">5</span>
+      <h3>Si pasa, el equipo da el OK</h3>
+      <p>Primer OK del equipo LatAm, OK final de Brand. Cat lo ve en inglés: resumen, transcripción traducida y hallazgos. Ve el video con los marcadores en la línea de tiempo y decide en un clic: aprobar, pedir cambios o rechazar, con nota.</p>
+    </div>
+    <div class="paso">
+      <span class="n">6</span>
+      <h3>Publica y se registra</h3>
+      <p>El influencer pega el link publicado. Queda guardado (lo pide la CFPB), se crea en Monday y Slack recibe el aviso. Alcance y engagement llegan de Modash al dashboard en la fase 2.</p>
+    </div>
+  </div>
+  <div class="principio">
+    <p class="ojo">El principio que protege a Sendwave</p>
+    <p><b>El modelo interpreta; el código decide.</b> La severidad de cada regla vive en la base de datos, no en un prompt. Hay verificaciones deterministas que corren siempre (cifras de tipo de cambio, "gratis", "al instante", competidores, código promocional, divulgación) aunque el modelo no las vea. Y ningún video se publica sin un humano que firme. Un prompt se puede convencer; un <code>if</code> no.</p>
+  </div>
+</section>
+
+<!-- 4 · Demo -->
+<section class="seccion" id="demo">
+  <p class="ojo">03 · Lo que ya construimos</p>
+  <h2>El demo funciona hoy. Súbele un video real.</h2>
+  <p class="sub">Está en <a href="https://sendwave-demo.vercel.app" target="_blank" rel="noopener">sendwave-demo.vercel.app</a>. Teckel manda los códigos de acceso por WhatsApp: uno de influencer para México, otro para Guatemala, otro para República Dominicana, y accesos de equipo LatAm, de Brand (en inglés) y de administrador. Las reglas y las listas de bancos son preliminares: se reemplazan con la guía oficial de onboarding y verificación en cuanto la recibamos.</p>
+  <figure class="captura">
+    <img src="assets/demo-detalle.png" alt="Detalle de un video en el demo: veredicto, hallazgos con marca de tiempo y línea de tiempo bajo el video" loading="lazy">
+    <figcaption>Un video de prueba con seis infracciones. Cada hallazgo tiene el segundo, la frase textual y la corrección sugerida; al tocarlo, el video salta a ese momento.</figcaption>
+  </figure>
+  <div class="capturas-2">
+    <figure class="captura"><img src="assets/demo-cola.png" alt="Cola de revisión del equipo con indicadores" loading="lazy"><figcaption>La cola del equipo: por revisar, con cambios, aprobados, publicados y bloqueos evitados, con filtro por país.</figcaption></figure>
+    <figure class="captura"><img src="assets/demo-reglas.png" alt="Reglas globales y bancos por país" loading="lazy"><figcaption>Las reglas, editables por un administrador sin tocar código: severidad, texto en dos idiomas, bancos y métodos por país.</figcaption></figure>
+  </div>
+  <div class="lista-doble">
+    <div>
+      <h3>Lo que hace el demo hoy</h3>
+      <ul class="palomas">
+        <li>Alta del influencer con país, código promocional y campaña</li>
+        <li>Subida de video desde el teléfono (hasta 50 MB en el demo)</li>
+        <li>Transcripción con marcas de tiempo y detección de idioma</li>
+        <li>Análisis de frames: texto en pantalla, divulgación, contenido apropiado</li>
+        <li>Veredicto con hallazgos por segundo, evidencia textual y corrección sugerida</li>
+        <li>Lista completa de reglas revisadas (pasa, falla, no claro)</li>
+        <li>Resumen y transcripción en inglés para Brand</li>
+        <li>Doble aprobación con roles: LatAm da el primer OK, Brand el final</li>
+        <li>Versiones corregidas ligadas al envío original</li>
+        <li>Registro del link publicado y envío a Monday</li>
+        <li>Avisos a Slack (nuevo por revisar, OK, cambios, publicado)</li>
+        <li>Historial append-only de cada video: quién hizo qué y cuándo</li>
+        <li>Reglas y bancos editables por país, en dos idiomas</li>
+        <li>Interruptor y tope diario para controlar el gasto</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Lo que el demo todavía no hace</h3>
+      <ul class="pendientes">
+        <li>Avisar por WhatsApp o correo al influencer y a Brand (fase 2; requiere la cuenta de Meta Business de Sendwave)</li>
+        <li>Traer alcance y engagement de Modash al dashboard (fase 2; la API ya la tenemos)</li>
+        <li>Fotos de historias (hoy solo video; es un ajuste corto)</li>
+        <li>Correr en las cuentas de Sendwave (hoy corre en cuentas de Teckel para la demostración)</li>
+        <li>Las reglas oficiales: hoy son las que dedujimos de la junta, del sitio de Sendwave y de la acción de la CFPB de 2023</li>
+      </ul>
+      <p class="chico muted">Slack y Monday están simulados en el demo hasta que Sendwave comparta un webhook y un token; lo simulado queda marcado en el historial.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · Reglas por país -->
+<section class="seccion seccion-crema2" id="reglas">
+  <p class="ojo">04 · Reglas por país, no un prompt</p>
+  <h2>Los outlines generales aplican a toda LatAm. Los bancos cambian por país. El sistema sabe de dónde es cada influencer.</h2>
+  <div class="dos">
+    <div class="tarjeta">
+      <h3>Globales (toda la región)</h3>
+      <table class="tabla">
+        <tr><td class="mono">G01</td><td>No mencionar el tipo de cambio ni una cifra</td><td><span class="sev sev-block">bloquea</span></td></tr>
+        <tr><td class="mono">G02</td><td>No prometer velocidad absoluta ("al instante", "en segundos")</td><td><span class="sev sev-block">bloquea</span></td></tr>
+        <tr><td class="mono">G03</td><td>No decir "gratis" ni "sin comisiones"</td><td><span class="sev sev-block">bloquea</span></td></tr>
+        <tr><td class="mono">G04</td><td>No garantizar entrega ni resultados</td><td><span class="sev sev-block">bloquea</span></td></tr>
+        <tr><td class="mono">G05</td><td>Divulgar que es publicidad (#ad, #publicidad)</td><td><span class="sev sev-block">bloquea</span></td></tr>
+        <tr><td class="mono">G06</td><td>Decir o mostrar el código promocional exacto</td><td><span class="sev sev-block">bloquea</span></td></tr>
+        <tr><td class="mono">G07</td><td>No comparar nombrando competidores</td><td><span class="sev sev-warn">avisa</span></td></tr>
+        <tr><td class="mono">G08</td><td>Contenido apropiado para la marca (audio e imagen)</td><td><span class="sev sev-block">bloquea</span></td></tr>
+        <tr><td class="mono">G11</td><td>No presentar a Sendwave como banco ni "asegurado"</td><td><span class="sev sev-block">bloquea</span></td></tr>
+      </table>
+    </div>
+    <div class="tarjeta">
+      <h3>Por país (ejemplo)</h3>
+      <div class="pais-ej"><b><span class="cc">MX</span> México</b><p>Depósito a BBVA, Banorte, Santander, Citibanamex, HSBC, Scotiabank, Banco Azteca, BanCoppel. Retiro en efectivo en OXXO y Banorte.</p></div>
+      <div class="pais-ej"><b><span class="cc">GT</span> Guatemala</b><p>Depósito a Banrural, Banco Industrial, BAM, G&amp;T Continental. Retiro en efectivo en Banco Industrial.</p></div>
+      <div class="pais-ej"><b><span class="cc">DO</span> República Dominicana</b><p>Depósito a Banco Popular, Banreservas, BHD, Scotiabank RD. Retiro en puntos autorizados.</p></div>
+      <p class="chico muted">Listas preliminares tomadas de información pública. Si un influencer de Guatemala dice "Banorte", la IA lo marca (regla C01). El administrador corrige la lista desde el hub, sin código.</p>
+    </div>
+  </div>
+  <p class="nota">Las reglas G01 a G03 salen directo de la acción de la CFPB contra Sendwave en 2023 (claims de "instantly", "in 30 seconds" y "no fees"). La G05 de la FTC y de la guía de PROFECO para influencers. Todo es editable y se sustituye por la guía interna de Sendwave.</p>
+</section>
+
+<!-- 6 · Para cada quien -->
+<section class="seccion" id="quien">
+  <p class="ojo">05 · Qué ve cada quien</p>
+  <h2>Menos hora nalga viendo TikToks. Más visibilidad en un solo lugar.</h2>
+  <div class="roles">
+    <div class="rol"><h3>El influencer</h3><p>Desde su teléfono: sube, ve en dos minutos qué corregir, sube la versión nueva, y sabe cuándo puede publicar. Sin esperar a que alguien lea el grupo.</p></div>
+    <div class="rol"><h3>El equipo LatAm</h3><p>Una cola con lo que de verdad hay que ver: solo lo que ya pasó la IA. Cada video con su resumen, sus hallazgos y su historial. Filtro por país y por campaña.</p></div>
+    <div class="rol"><h3>Brand (Reino Unido)</h3><p>Todo en inglés: resumen, transcripción traducida, hallazgos y checklist. Da el OK final sin depender de que alguien le explique el video en Slack.</p></div>
+    <div class="rol"><h3>Dirección</h3><p>Cuántos videos esperan, desde cuándo, cuántos bloqueos evitó la IA, qué reglas fallan más y en qué país. La evidencia de cumplimiento, lista para una auditoría.</p></div>
+  </div>
+  <figure class="captura captura-movil">
+    <img src="assets/demo-movil.png" alt="Vista del demo en un teléfono" loading="lazy">
+    <figcaption>La vista del influencer en el teléfono.</figcaption>
+  </figure>
+</section>
+
+<!-- 7 · Integraciones -->
+<section class="seccion seccion-crema2" id="integraciones">
+  <p class="ojo">06 · Integraciones</p>
+  <h2>El hub no reemplaza a Slack ni a Monday. Los alimenta.</h2>
+  <div class="integ">
+    <div class="tarjeta"><h3>Slack</h3><p>Aviso cuando un video queda listo para revisión, recibe un OK, pide cambios o se publica, con link directo al hub. Brand puede seguir aprobando desde el hub y ver el aviso en Slack.</p><span class="chip">Fase 1 · webhook de Sendwave</span></div>
+    <div class="tarjeta"><h3>Monday</h3><p>Al registrarse el link publicado, se crea o actualiza el ítem en el tablero de campañas. Se acaba el copiar links a mano.</p><span class="chip">Fase 1 · token de Monday</span></div>
+    <div class="tarjeta"><h3>Modash</h3><p>Alcance, engagement y las publicaciones detectadas por el active listening llegan al dashboard, por influencer y por código promocional. El Excel de ROI y CAC se alimenta solo.</p><span class="chip">Fase 2 · API de Modash</span></div>
+    <div class="tarjeta"><h3>WhatsApp y correo</h3><p>Aviso al influencer cuando su video necesita cambios o ya puede publicar, y a Brand cuando hay videos esperando. WhatsApp por la API oficial de Meta.</p><span class="chip">Fase 2 · Meta Business de Sendwave</span></div>
+  </div>
+  <p class="nota"><b>Sobre WhatsApp.</b> Meta cobra por conversación iniciada por la empresa (centavos de dólar por mensaje) y la verificación de la cuenta de Meta Business tarda semanas. Por eso la sugerimos en la fase 2 y pedimos que Sendwave arranque el trámite desde la fase 1. No hay forma oficial de meter un agente de IA a un grupo de WhatsApp; el hub es el camino que sí existe.</p>
+</section>
+
+<!-- 8 · Lo que la IA no hace -->
+<section class="seccion" id="limites">
+  <p class="ojo">07 · Lo que la IA no hace, y qué pasa cuando falla</p>
+  <h2>La IA reduce la fila. El OK sigue siendo de una persona.</h2>
+  <div class="dos">
+    <div class="tarjeta">
+      <ul class="palomas">
+        <li><b>No publica nada.</b> Ningún video sale sin la firma de Brand o de un administrador.</li>
+        <li><b>No inventa reglas.</b> Solo evalúa las que están en la base; si algo le preocupa y no hay regla, lo escribe en notas para que una persona decida.</li>
+        <li><b>Cuando no está segura, lo dice.</b> "No claro" es un estado válido; un texto en pantalla que dura un segundo puede no salir en las muestras.</li>
+        <li><b>Puede equivocarse.</b> Un falso positivo cuesta una versión más del influencer; un falso negativo lo atrapa el revisor humano, que ve el video completo. Por eso las dos capas.</li>
+      </ul>
+    </div>
+    <div class="tarjeta">
+      <ul class="palomas">
+        <li><b>Todo queda registrado.</b> Historial que no se edita ni se borra: subida, análisis, decisiones, notas, avisos enviados y avisos simulados.</li>
+        <li><b>Datos en cuentas de Sendwave.</b> En producción, la base, el almacenamiento y las llaves del modelo viven en cuentas de Sendwave. Teckel no se queda con los videos.</li>
+        <li><b>Sin entrenamiento con sus datos.</b> El proveedor del modelo no entrena con las llamadas de la API.</li>
+        <li><b>Interruptor y tope de gasto.</b> El análisis se apaga en 60 segundos sin redesplegar; hay tope diario y alerta antes de llegar.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · Plan -->
+<section class="seccion seccion-cacao" id="plan">
+  <p class="ojo">08 · Plan</p>
+  <h2>Tres semanas para el piloto. Tres más para las integraciones.</h2>
+  <div class="fases">
+    <div class="fase">
+      <p class="ojo">Fase 1 · Piloto</p>
+      <h3>Portal, pre-aprobación con IA y revisión humana</h3>
+      <table class="tabla tabla-plan">
+        <tr><td>Semana 1</td><td>Sesión de arranque con Mariano: reglas oficiales por país, guía de onboarding, criterios de verificación. Alta de la infraestructura en cuentas de Sendwave. Slack conectado.</td></tr>
+        <tr><td>Semana 2</td><td>Reglas cargadas y calibradas con 20 videos reales ya aprobados o rechazados por el equipo (medimos cuántos coincide). Historias con foto. Monday conectado. Roles y accesos del equipo.</td></tr>
+        <tr><td>Semana 3</td><td>Prueba con 5 a 10 influencers reales de dos países. Ajustes. Capacitación de 45 minutos al equipo y guía de una página para el influencer. Encendido.</td></tr>
+      </table>
+      <p><b>Entrega:</b> el hub en producción en cuentas de Sendwave, con las reglas oficiales, Slack y Monday, el historial y el tablero de revisión. 30 días de acompañamiento incluidos.</p>
+    </div>
+    <div class="fase">
+      <p class="ojo">Fase 2 · Integraciones y visibilidad</p>
+      <h3>Modash, avisos y el dashboard de resultados</h3>
+      <table class="tabla tabla-plan">
+        <tr><td>Semanas 4 y 5</td><td>Modash al hub: alcance, engagement y publicaciones por influencer y por código. Dashboard de ROI y CAC por región que reemplaza el Excel. Avisos por correo.</td></tr>
+        <tr><td>Semana 6</td><td>WhatsApp por la API oficial (si Meta Business ya está verificado): avisos al influencer y a Brand. Reporte semanal automático a dirección. Cierre.</td></tr>
+      </table>
+      <p><b>Entrega:</b> el equipo deja de copiar datos entre plataformas; dirección ve resultados por campaña sin pedirlos.</p>
+    </div>
+  </div>
+  <p class="nota nota-clara">El reloj arranca cuando tengamos las reglas oficiales, los accesos (Slack, Monday, Modash) y la decisión de dónde viven los datos. Si una dependencia de Sendwave se atrasa, el reloj se pausa; no cobramos por esperar.</p>
+</section>
+
+<!-- 10 · Inversión -->
+<section class="seccion" id="inversion">
+  <p class="ojo">09 · Inversión</p>
+  <h2>Un precio cerrado por fase. Sin sorpresas.</h2>
+  <div class="precios">
+    <div class="precio">
+      <p class="ojo">Fase 1 · Piloto</p>
+      <div class="monto">USD 22,000</div>
+      <p class="chico">3 semanas · 50% al arrancar, 50% al encender</p>
+      <ul class="palomas chico">
+        <li>Portal del influencer y cola de revisión</li>
+        <li>IA: transcripción, frames, reglas por país</li>
+        <li>Doble aprobación, roles, ES/EN</li>
+        <li>Slack y Monday</li>
+        <li>Historial y evidencia de cumplimiento</li>
+        <li>Calibración con 20 videos reales</li>
+        <li>Capacitación y 30 días de acompañamiento</li>
+      </ul>
+    </div>
+    <div class="precio destacado">
+      <p class="ojo">Fase 2 · Integraciones</p>
+      <div class="monto">USD 18,000</div>
+      <p class="chico">3 semanas · 50% al arrancar, 50% al entregar</p>
+      <ul class="palomas chico">
+        <li>Modash al hub por influencer y código</li>
+        <li>Dashboard de ROI y CAC por región</li>
+        <li>Avisos por correo y WhatsApp oficial</li>
+        <li>Reporte semanal automático</li>
+        <li>Exportación a Excel cuando la pidan</li>
+      </ul>
+    </div>
+    <div class="precio">
+      <p class="ojo">Operación y mejora continua</p>
+      <div class="monto">USD 2,500<small>/mes</small></div>
+      <p class="chico">desde el encendido de la fase 1</p>
+      <ul class="palomas chico">
+        <li>Monitoreo y soporte en horario LatAm</li>
+        <li>Ajustes de reglas cuando cambie el regulador o un país</li>
+        <li>Hasta 600 piezas revisadas al mes</li>
+        <li>Mejoras menores sin cotizar</li>
+        <li>Reporte mensual de uso y hallazgos</li>
+      </ul>
+    </div>
+  </div>
+  <div class="dos" style="margin-top:22px">
+    <div class="tarjeta">
+      <h3>Costos directos que paga Sendwave a los proveedores</h3>
+      <p>Modelo de IA: cada video de 60 segundos consume unos 4,000 tokens de entrada y 4,000 de salida; con 500 piezas al mes son <b>entre USD 60 y 120 al mes</b>. Transcripción: centavos. Base de datos y almacenamiento: <b>USD 25 a 50 al mes</b> en su plan actual de nube (AWS o Supabase). WhatsApp: según volumen de avisos, centavos por conversación. Todo en cuentas de Sendwave, con tope mensual y alerta al 80%.</p>
+    </div>
+    <div class="tarjeta">
+      <h3>Condiciones</h3>
+      <ul class="palomas chico">
+        <li>Precios en dólares, sin IVA (exportación de servicios desde México, factura con IVA 0%; W-8BEN si lo requieren).</li>
+        <li>Cambios fuera de alcance a USD 145 por hora, cotizados antes en bloques de medio día.</li>
+        <li>Sendwave es dueño del código y de los datos desde el primer commit. Se puede ir cuando quiera, con runbooks y exportación.</li>
+        <li>Vigencia de esta propuesta: 30 días.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 11 · ROI -->
+<section class="seccion seccion-crema2" id="roi">
+  <p class="ojo">10 · Lo que vale</p>
+  <h2>Mueve los números de tu equipo.</h2>
+  <div class="roi">
+    <div class="sliders">
+      <label>Piezas al mes (videos e historias) <output id="o-piezas">450</output><input type="range" id="s-piezas" min="100" max="1200" step="10" value="450"></label>
+      <label>Minutos por pieza y por revisor hoy (ver, pedir cambios, volver a ver, avisar) <output id="o-min">12</output><input type="range" id="s-min" min="3" max="40" step="1" value="12"></label>
+      <label>Revisores por pieza <output id="o-rev">2</output><input type="range" id="s-rev" min="1" max="3" step="1" value="2"></label>
+      <label>Costo por hora del equipo, promedio (USD) <output id="o-costo">45</output><input type="range" id="s-costo" min="15" max="120" step="5" value="45"></label>
+      <label>Porcentaje de piezas que la IA regresa antes de llegar al equipo <output id="o-pct">40</output>%<input type="range" id="s-pct" min="10" max="70" step="5" value="40"></label>
+    </div>
+    <div class="resultados">
+      <div class="res"><b id="r-horas-hoy">180</b><span>horas al mes revisando hoy</span></div>
+      <div class="res"><b id="r-horas-hub">54</b><span>horas al mes con el hub (confirmar en vez de buscar: 4 min por pieza, un revisor por capa)</span></div>
+      <div class="res destacada"><b id="r-ahorro">126 h</b><span>liberadas al mes, <span id="r-usd">USD 5,670</span> de tiempo de equipo</span></div>
+      <p class="chico muted">Supuesto: con el hub cada pieza que llega al equipo se confirma en unos 4 minutos porque el resumen, la transcripción y los hallazgos ya están; las que la IA regresa no consumen tiempo del equipo. No incluye el costo de una activación perdida por un video que esperó del viernes al domingo, ni el de una multa.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 12 · Lo que necesitamos -->
+<section class="seccion" id="necesitamos">
+  <p class="ojo">11 · Lo que necesitamos de Sendwave</p>
+  <h2>Seis cosas, y el reloj arranca.</h2>
+  <ol class="necesidades">
+    <li><b>La guía de onboarding</b> que le mandan al influencer, tal cual, y el proceso de verificación de videos con las reglas por país. <span class="muted">Mariano ya quedó de mandarla.</span></li>
+    <li><b>Cuántas historias y fotos</b> se aprueban al mes, para dimensionar el consumo.</li>
+    <li><b>20 videos ya revisados</b> (aprobados y rechazados, con el motivo) para calibrar la IA contra el criterio real del equipo.</li>
+    <li><b>Accesos:</b> un webhook de Slack para el canal de aprobaciones, un token de Monday con el tablero de campañas, y la API de Modash (ya la tenemos).</li>
+    <li><b>Dónde viven los datos:</b> cuenta de AWS o Supabase de Sendwave y región. Es una decisión que se firma una vez.</li>
+    <li><b>Una persona con nombre</b> que valide las reglas y sea el contacto diario, y la junta de 30 minutos con quien firma.</li>
+  </ol>
+</section>
+
+<!-- 13 · Siguiente paso -->
+<section class="seccion seccion-sol" id="siguiente">
+  <p class="ojo">12 · Siguiente paso</p>
+  <h2>Prueba el demo con un video real esta semana. Después lo vemos con tu equipo.</h2>
+  <p class="lead">Mariano prueba el demo con los códigos que le mandamos, nos da su feedback, y lo presentamos al equipo de Sendwave en una sola sesión de 30 minutos con 20 de preguntas. Si el equipo directivo decide avanzar, arrancamos la fase 1 con las reglas oficiales en la mano.</p>
+  <div class="fila">
+    <a class="btn btn-cacao" href="https://sendwave-demo.vercel.app" target="_blank" rel="noopener">Abrir el demo</a>
+    <a class="btn btn-linea" href="https://wa.me/525532161578" target="_blank" rel="noopener">Escribir a Jorge por WhatsApp</a>
+  </div>
+</section>
+
+<section class="seccion quienes" id="quienes">
+  <div class="dos">
+    <div>
+      <p class="ojo">Quiénes somos</p>
+      <h3>Teckel AI</h3>
+      <p>Somos una consultora mexicana de inteligencia artificial aplicada que construye. Entramos a la operación, encontramos dónde se pierde el tiempo y el dinero, y entregamos el sistema funcionando. Tenemos en producción agentes que operan sobre los datos de nuestros clientes, sistemas de visibilidad y alertas para una agencia aduanal con 40 personas, y motores de prospección. Trabajamos con el mismo método en todos los proyectos: onboarding, requisitos, roadmap, control de calidad y seguridad, con el cliente como dueño del código y de los datos.</p>
+    </div>
+    <div>
+      <p class="ojo">Contacto</p>
+      <p><b>Jorge Rojas</b> · CEO<br><a href="mailto:george@teckel-ai.com">george@teckel-ai.com</a> · +52 55 3216 1578</p>
+      <p><b>Grant Keegan</b> · CTO<br><a href="mailto:grantkeegan@teckel-ai.com">grantkeegan@teckel-ai.com</a> · +52 442 879 7124</p>
+      <p><a href="https://teckel-ai.com" target="_blank" rel="noopener">teckel-ai.com</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="pie">
+  <span>Propuesta confidencial para Sendwave · Teckel AI · 16 de septiembre de 2026 · vigente 30 días</span>
+  <a class="pie-teckel" href="https://teckel-ai.com" target="_blank" rel="noopener"><img src="assets/teckel-mark.svg" alt="" width="18" height="18"> Teckel AI</a>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
