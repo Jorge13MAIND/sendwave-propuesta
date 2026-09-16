@@ -1,7 +1,7 @@
 // Verificador de guion en vivo (seis reglas de ejemplo, sin servidor) y calculadora de horas.
 (function () {
   const reglas = [
-    { code: "G01", sev: "block", re: /(tipo de cambio|exchange rate)[^.]{0,40}\d|\d+[.,]\d+\s*(pesos|quetzales|lempiras|soles|reales)\s*por\s*(d[óo]lar|euro)|el d[óo]lar est[áa] a \d/i, msg: "Menciona una cifra de tipo de cambio. Di que se ve en la app antes de enviar." },
+    { code: "G01", sev: "block", re: /(tipo de cambio|exchange rate)[^.]{0,40}\d|\d+[.,]\d+\s*(pesos|quetzales|lempiras|soles|reales)\s*por\s*(d[óo]lar|euro)|el d[óo]lar est[áa] a \d+([.,]\d+)?/i, msg: "Menciona una cifra de tipo de cambio. Di que se ve en la app antes de enviar." },
     { code: "G02", sev: "block", re: /\b(al instante|instant[áa]neo|instantly|en segundos|in seconds|en 30 segundos)\b/i, msg: "Promete velocidad absoluta. Cambia a 'rápido' o 'puede llegar en minutos, según el banco'." },
     { code: "G03", sev: "block", re: /\b(gratis|sin comisi[óo]n(es)?|cero comisiones|no cobran|no fees|free)\b/i, msg: "Dice que es gratis o sin comisiones. Cambia a 'comisiones bajas: ves el costo total antes de enviar'." },
     { code: "G04", sev: "block", re: /\b(garantizado|garantizada|guaranteed|siempre llega|nunca falla)\b/i, msg: "Garantiza entrega o resultado. Habla de tu experiencia, sin garantías." },
@@ -34,7 +34,7 @@
   const ids = ["piezas", "min", "rev", "costo", "pct"];
   function calc() {
     const v = Object.fromEntries(ids.map((k) => [k, +$("s-" + k).value]));
-    ids.forEach((k) => ($("o-" + k).textContent = v[k]));
+    ids.forEach((k) => ($("o-" + k).textContent = v[k] + (k === "pct" ? "%" : "")));
     const hoy = (v.piezas * v.min * v.rev) / 60;
     const llegan = v.piezas * (1 - v.pct / 100);
     const hub = (llegan * 4 * v.rev) / 60;
