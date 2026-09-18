@@ -111,7 +111,7 @@
     <div class="paso">
       <span class="n">3</span>
       <h3>La IA lo pre-aprueba en dos minutos</h3>
-      <p>Transcribe el audio con marcas de tiempo, muestrea los frames y lee el texto en pantalla. Contrasta todo con las reglas globales (tipo de cambio, "gratis", "al instante", divulgación, código) y con las de su país (bancos receptores, métodos, moneda). Devuelve un veredicto, la lista de reglas revisadas y, para cada falla, el segundo exacto, la frase textual y qué cambiar.</p>
+      <p>Transcribe el audio con marcas de tiempo, analiza <b>un frame por cada segundo del video</b> y lee el texto en pantalla. Contrasta todo con las reglas globales (tipo de cambio, "gratis", "al instante", divulgación, código) y con las de su país (bancos receptores, métodos, moneda). Devuelve un veredicto, la lista de reglas revisadas y, para cada falla, el segundo exacto, la frase textual y qué cambiar.</p>
     </div>
     <div class="paso">
       <span class="n">4</span>
@@ -155,11 +155,11 @@
         <li>Alta del influencer con país, código promocional y campaña</li>
         <li>Subida de video desde el teléfono (hasta 50 MB en el demo)</li>
         <li>Transcripción con marcas de tiempo y detección de idioma</li>
-        <li>Análisis de frames: texto en pantalla, divulgación, contenido apropiado</li>
+        <li>Análisis de un frame por segundo (un video de 60 s son 60 frames): texto en pantalla, divulgación, contenido apropiado</li>
         <li>Veredicto con hallazgos por segundo, evidencia textual y corrección sugerida</li>
         <li>Lista completa de reglas revisadas (pasa, falla, no claro)</li>
         <li>Resumen y transcripción en inglés para Brand</li>
-        <li>Doble aprobación con roles: LatAm da el primer OK, Brand el final</li>
+        <li>Moderación automática con interruptor: lo que pasa queda aprobado y lo que falla se rechaza con motivos; o doble OK humano (LatAm y Brand) si se apaga</li>
         <li>Versiones corregidas ligadas al envío original</li>
         <li>Registro del link publicado y envío a Monday</li>
         <li>Avisos a Slack (nuevo por revisar, OK, cambios, publicado)</li>
@@ -248,9 +248,9 @@
   <div class="dos">
     <div class="tarjeta">
       <ul class="palomas">
-        <li><b>No publica nada.</b> Ningún video sale sin la firma de Brand o de un administrador.</li>
+        <li><b>Decide, pero se puede revertir.</b> Con la moderación automática encendida, la IA aprueba o rechaza; cualquier persona del equipo puede revertir la decisión desde el hub y todo queda en el historial. Con el interruptor apagado, ningún video sale sin la firma de Brand.</li>
         <li><b>No inventa reglas.</b> Solo evalúa las que están en la base; si algo le preocupa y no hay regla, lo escribe en notas para que una persona decida.</li>
-        <li><b>Cuando no está segura, lo dice.</b> "No claro" es un estado válido; un texto en pantalla que dura un segundo puede no salir en las muestras.</li>
+        <li><b>Cuando no está segura, lo dice.</b> "No claro" es un estado válido y un hallazgo solo cuenta si la regla quedó marcada como fallida en la lista de verificación.</li>
         <li><b>Puede equivocarse.</b> Un falso positivo cuesta una versión más del influencer; un falso negativo lo atrapa el revisor humano, que ve el video completo. Por eso las dos capas.</li>
       </ul>
     </div>
@@ -340,7 +340,7 @@
   <div class="dos" style="margin-top:22px">
     <div class="tarjeta">
       <h3>Costos directos que paga Sendwave a los proveedores</h3>
-      <p>Modelo de IA: cada video de 60 segundos consume unos 4,000 tokens de entrada y 4,000 de salida; con 500 piezas al mes son <b>entre USD 60 y 120 al mes</b>. Transcripción: centavos. Base de datos y almacenamiento: <b>USD 25 a 50 al mes</b> en su plan actual de nube (AWS o Supabase). WhatsApp: según volumen de avisos, centavos por conversación. Todo en cuentas de Sendwave, con tope mensual y alerta al 80%.</p>
+      <p>Modelo de IA: con un frame por segundo, un video de 60 segundos consume unos 20,000 tokens de entrada y 5,000 de salida; con 500 piezas al mes son <b>entre USD 20 y 40 al mes</b> con el modelo del demo, o entre USD 100 y 200 con el modelo más potente. Transcripción: centavos. Base de datos y almacenamiento: <b>USD 25 a 50 al mes</b> en su plan actual de nube (AWS o Supabase). WhatsApp: según volumen de avisos, centavos por conversación. Todo en cuentas de Sendwave, con tope mensual y alerta al 80%.</p>
     </div>
     <div class="tarjeta">
       <h3>Condiciones</h3>
