@@ -174,8 +174,9 @@
         <li>Avisar por WhatsApp o correo al influencer y a Brand (fase 2; requiere la cuenta de Meta Business de Sendwave)</li>
         <li>Traer alcance y engagement de Modash al dashboard (fase 2; la API ya la tenemos)</li>
         <li>Fotos de historias (hoy solo video; es un ajuste corto)</li>
+        <li>Lineamientos de los países que no son México, que llegan en la auditoría</li>
         <li>Correr en las cuentas de Sendwave (hoy corre en cuentas de Teckel para la demostración)</li>
-        <li>Las reglas oficiales: hoy son las que dedujimos de la junta, del sitio de Sendwave y de la acción de la CFPB de 2023</li>
+        <li>Revisar la pieza final: hoy revisamos el video como nos llega, y el influencer le agrega después subtítulos, el código en texto y el link</li>
       </ul>
       <p class="chico muted">Slack y Monday están simulados en el demo hasta que Sendwave comparta un webhook y un token; lo simulado queda marcado en el historial.</p>
     </div>
@@ -236,7 +237,7 @@
   <p class="ojo">06 · Integraciones</p>
   <h2>El hub no reemplaza a Slack ni a Monday. Los alimenta.</h2>
   <div class="integ">
-    <div class="tarjeta"><h3>Slack</h3><p>Aviso cuando un video queda listo para revisión, recibe un OK, pide cambios o se publica, con link directo al hub. Brand puede seguir aprobando desde el hub y ver el aviso en Slack.</p><span class="chip">Fase 1 · webhook de Sendwave</span></div>
+    <div class="tarjeta"><h3>Slack</h3><p>Ya funciona: cada video manda al canal su ficha con el influencer, el país, el veredicto, los hallazgos y un botón que abre el hub, con el resumen y la transcripción en inglés para quien aprueba desde Reino Unido. En la demostración publica en el Slack de Teckel; en producción se instala en el de Sendwave.</p><span class="chip">Listo · falta el workspace de Sendwave</span></div>
     <div class="tarjeta"><h3>Monday</h3><p>Al registrarse el link publicado, se crea o actualiza el ítem en el tablero de campañas. Se acaba el copiar links a mano.</p><span class="chip">Fase 1 · token de Monday</span></div>
     <div class="tarjeta"><h3>Modash</h3><p>Alcance, engagement y las publicaciones detectadas por el active listening llegan al dashboard, por influencer y por código promocional. El Excel de ROI y CAC se alimenta solo.</p><span class="chip">Fase 2 · API de Modash</span></div>
     <div class="tarjeta"><h3>WhatsApp y correo</h3><p>Aviso al influencer cuando su video necesita cambios o ya puede publicar, y a Brand cuando hay videos esperando. WhatsApp por la API oficial de Meta.</p><span class="chip">Fase 2 · Meta Business de Sendwave</span></div>
@@ -254,6 +255,7 @@
         <li><b>Decide, pero se puede revertir.</b> Con la moderación automática encendida, la IA aprueba o rechaza; cualquier persona del equipo puede revertir la decisión desde el hub y todo queda en el historial. Con el interruptor apagado, ningún video sale sin la firma de Brand.</li>
         <li><b>No inventa reglas.</b> Solo evalúa las que están en la base; si algo le preocupa y no hay regla, lo escribe en notas para que una persona decida.</li>
         <li><b>Cuando no está segura, lo dice.</b> "No claro" es un estado válido y un hallazgo solo cuenta si la regla quedó marcada como fallida en la lista de verificación.</li>
+        <li><b>Lee lo que está en pantalla.</b> En una prueba con el audio impecable y un rótulo que decía "la mejor tasa de cambio", el sistema levantó ese único hallazgo y señaló que venía de la imagen.</li>
         <li><b>Puede equivocarse.</b> Un falso positivo cuesta una versión más del influencer; un falso negativo lo atrapa el revisor humano, que ve el video completo. Por eso las dos capas.</li>
       </ul>
     </div>
@@ -386,10 +388,10 @@
   <p class="ojo">11 · Lo que necesitamos de Sendwave</p>
   <h2>Seis cosas, y el reloj arranca.</h2>
   <ol class="necesidades">
-    <li><b>La guía de onboarding</b> que le mandan al influencer, tal cual, y el proceso de verificación de videos con las reglas por país. <span class="muted">Mariano ya quedó de mandarla.</span></li>
+    <li><b>El onboarding de los demás países.</b> El de México ya lo tenemos y sus reglas ya están cargadas en el hub; faltan Guatemala, Colombia, Brasil, República Dominicana, Honduras, El Salvador y Perú.</li>
     <li><b>Cuántas historias y fotos</b> se aprueban al mes, para dimensionar el consumo.</li>
     <li><b>20 videos ya revisados</b> (aprobados y rechazados, con el motivo) para calibrar la IA contra el criterio real del equipo.</li>
-    <li><b>Accesos:</b> un webhook de Slack para el canal de aprobaciones, un token de Monday con el tablero de campañas, y la API de Modash (ya la tenemos).</li>
+    <li><b>Accesos:</b> la app del hub instalada en su Slack, un token de Monday con el tablero de campañas, y la demo de la API de Modash para conectar alcance y engagement.</li>
     <li><b>Dónde viven los datos:</b> cuenta de AWS o Supabase de Sendwave y región. Es una decisión que se firma una vez.</li>
     <li><b>Una persona con nombre</b> que valide las reglas y sea el contacto diario, y la junta de 30 minutos con quien firma.</li>
   </ol>
