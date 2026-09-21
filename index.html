@@ -156,6 +156,9 @@
         <li>Subida de video desde el teléfono (hasta 50 MB en el demo)</li>
         <li>Transcripción con marcas de tiempo y detección de idioma</li>
         <li>Análisis de un frame por segundo (un video de 60 s son 60 frames): texto en pantalla, divulgación, contenido apropiado</li>
+        <li>Historias con foto, además de video</li>
+        <li>El equipo sube un video en nombre de un influencer, para lo que hoy les llega por WhatsApp</li>
+        <li>Botón para marcar un hallazgo como falso positivo y calibrar la regla</li>
         <li>Veredicto con hallazgos por segundo, evidencia textual y corrección sugerida</li>
         <li>Lista completa de reglas revisadas (pasa, falla, no claro)</li>
         <li>Resumen y transcripción en inglés para Brand</li>
@@ -173,7 +176,6 @@
       <ul class="pendientes">
         <li>Avisar por WhatsApp o correo al influencer y a Brand (fase 2; requiere la cuenta de Meta Business de Sendwave)</li>
         <li>Traer alcance y engagement de Modash al dashboard (fase 2; la API ya la tenemos)</li>
-        <li>Fotos de historias (hoy solo video; es un ajuste corto)</li>
         <li>Lineamientos de los países que no son México, que llegan en la auditoría</li>
         <li>Correr en las cuentas de Sendwave (hoy corre en cuentas de Teckel para la demostración)</li>
         <li>Revisar la pieza final: hoy revisamos el video como nos llega, y el influencer le agrega después subtítulos, el código en texto y el link</li>
@@ -186,34 +188,39 @@
 <!-- 5 · Reglas por país -->
 <section class="seccion seccion-crema2" id="reglas">
   <p class="ojo">04 · Reglas por país, no un prompt</p>
-  <h2>Las reglas ya son las suyas, cargadas del onboarding de México. Los bancos cambian por país.</h2>
+  <h2>Las reglas ya son las suyas. Lo que cambia por país vive en una tabla, no en el prompt.</h2>
   <div class="dos">
     <div class="tarjeta">
-      <h3>Globales, del onboarding de Sendwave</h3>
+      <h3>Las 21 reglas que revisa hoy</h3>
       <table class="tabla">
         <tr><td class="mono">G01</td><td>Tipo de cambio sin cifras. Sí se puede decir "excelente tipo de cambio"</td><td><span class="sev sev-block">bloquea</span></td></tr>
         <tr><td class="mono">G02</td><td>Velocidad sin promesas: "rápido" o "veloz", nunca un tiempo concreto</td><td><span class="sev sev-block">bloquea</span></td></tr>
-        <tr><td class="mono">G03</td><td>Nada de "gratis" ni "sin comisiones"</td><td><span class="sev sev-block">bloquea</span></td></tr>
-        <tr><td class="mono">G04</td><td>Seguridad sin absolutos: "seguro" sí, "100% seguro" y "totalmente" no</td><td><span class="sev sev-block">bloquea</span></td></tr>
+        <tr><td class="mono">G03</td><td>Sin montos de comisión y sin la palabra "gratis"</td><td><span class="sev sev-block">bloquea</span></td></tr>
+        <tr><td class="mono">G04</td><td>Seguridad sin absolutos: "seguro" sí, "100%" y "completamente" no</td><td><span class="sev sev-block">bloquea</span></td></tr>
         <tr><td class="mono">G05</td><td>Divulgar que es publicidad</td><td><span class="sev sev-block">bloquea</span></td></tr>
-        <tr><td class="mono">G06</td><td>Código promocional exacto y link único, con el envío mínimo</td><td><span class="sev sev-block">bloquea</span></td></tr>
+        <tr><td class="mono">G06</td><td>Código promocional exacto, dicho o en pantalla</td><td><span class="sev sev-block">bloquea</span></td></tr>
         <tr><td class="mono">G07</td><td>Ningún competidor por su nombre</td><td><span class="sev sev-block">bloquea</span></td></tr>
         <tr><td class="mono">G11</td><td>Sendwave no es un banco; sí es un servicio autorizado y regulado</td><td><span class="sev sev-block">bloquea</span></td></tr>
         <tr><td class="mono">G12</td><td>Sin superlativos: nada de "la mejor tasa" ni "la más rápida"</td><td><span class="sev sev-block">bloquea</span></td></tr>
         <tr><td class="mono">G13</td><td>Etiquetar a @sendwaveapp_latam en toda publicación</td><td><span class="sev sev-block">bloquea</span></td></tr>
-        <tr><td class="mono">G14</td><td>Disclaimer del tipo de cambio en texto visible sobre el video</td><td><span class="sev sev-block">bloquea</span></td></tr>
+        <tr><td class="mono">G14</td><td>Disclaimer del tipo de cambio en texto visible, palabra por palabra</td><td><span class="sev sev-block">bloquea</span></td></tr>
         <tr><td class="mono">G15</td><td>Vigencia del código y disclaimer largo en el caption</td><td><span class="sev sev-warn">avisa</span></td></tr>
+        <tr><td class="mono">G16</td><td>El código es un bono, no un descuento</td><td><span class="sev sev-block">bloquea</span></td></tr>
+        <tr><td class="mono">G17</td><td>Monto y moneda del bono exactos: 10 USD, 10 € o 10 £</td><td><span class="sev sev-block">bloquea</span></td></tr>
+        <tr><td class="mono">G18</td><td>Regla de igualación: hay que enviar al menos lo mismo</td><td><span class="sev sev-block">bloquea</span></td></tr>
+        <tr><td class="mono">C01</td><td>Solo bancos y métodos que existen en ese país</td><td><span class="sev sev-block">bloquea</span></td></tr>
+        <tr><td class="mono">C03</td><td>Solo los once países de destino soportados</td><td><span class="sev sev-block">bloquea</span></td></tr>
       </table>
     </div>
     <div class="tarjeta">
-      <h3>Por país (ejemplo)</h3>
+      <h3>Los once países, en tabla editable</h3>
       <div class="pais-ej"><b><span class="cc">MX</span> México</b><p>Depósito a Banorte, BBVA México (Bancomer), Citibanamex, Compartamos, HSBC, Inbursa, Santander, Scotiabank, Banco Azteca y Bancoppel. Retiro en efectivo en Walmart, Bodega Aurrera, Elektra, Farmacias Guadalajara, OXXO, Soriana, Banorte y BBVA. Tarifas: 1.99 USD por transferencia bancaria, 2.99 USD por retiro en efectivo.</p></div>
       <div class="pais-ej"><b><span class="cc">GT</span> Guatemala</b><p>Depósito a Banrural, Banco Industrial, BAM, G&amp;T Continental. Retiro en efectivo en Banco Industrial.</p></div>
       <div class="pais-ej"><b><span class="cc">DO</span> República Dominicana</b><p>Depósito a Banco Popular, Banreservas, BHD, Scotiabank RD. Retiro en puntos autorizados.</p></div>
-      <p class="chico muted">La lista de México es la oficial de su onboarding. Las de los demás países son preliminares hasta que nos pasen su material. Si un influencer de Guatemala nombra un banco mexicano, la IA lo marca (regla C01). El administrador corrige la lista desde el hub, sin código.</p>
+      <p class="chico muted">Cada país guarda sus bancos, sus carteras, sus formas de entrega, su moneda, sus idiomas y el texto exacto de su disclaimer. La IA consulta esa tabla en cada análisis, así que agregar un país o cambiar un banco es editar una fila, no tocar el código. Hoy están los once: Colombia, México, Brasil, Guatemala, República Dominicana, Haití, Perú, El Salvador, Nicaragua, Honduras y Jamaica. Si un video nombra un país fuera de esa lista, se rechaza. La de México es la oficial de su onboarding; las demás son preliminares hasta que nos pasen su material.</p>
     </div>
   </div>
-  <p class="nota">Estas reglas están cargadas del documento "Influencer Onboarding México 2026" de Sendwave y de su playbook, más lo que corrigió el equipo en la sesión del 18 de septiembre. Las de los otros países se cargan en la auditoría. Todo es editable desde el hub, sin tocar código.</p>
+  <p class="nota">Estas reglas salen del documento "Influencer Onboarding México 2026", de su playbook, de lo que corrigió el equipo en la sesión del 18 de septiembre y de los lineamientos que nos pasaron el 21. Incluyen la mecánica del bono: no es un descuento, es un crédito extra de 10 en la moneda del remitente, y para usarlo hay que enviar al menos esa misma cantidad. Todo es editable desde el hub, sin tocar código.</p>
 </section>
 
 <!-- 6 · Para cada quien -->
@@ -237,7 +244,7 @@
   <p class="ojo">06 · Integraciones</p>
   <h2>El hub no reemplaza a Slack ni a Monday. Los alimenta.</h2>
   <div class="integ">
-    <div class="tarjeta"><h3>Slack</h3><p>Ya funciona: cada video manda al canal su ficha con el influencer, el país, el veredicto, los hallazgos y un botón que abre el hub, con el resumen y la transcripción en inglés para quien aprueba desde Reino Unido. En la demostración publica en el Slack de Teckel; en producción se instala en el de Sendwave.</p><span class="chip">Listo · falta el workspace de Sendwave</span></div>
+    <div class="tarjeta"><h3>Slack</h3><p>Ya funciona en las dos direcciones: cada video manda al canal su ficha con el influencer, el país, el veredicto y los hallazgos, con el resumen y la transcripción en inglés para quien aprueba desde Reino Unido, y con botones para aprobar o pedir cambios sin salir de Slack. Quien decide queda en el historial. En la demostración publica en el Slack de Teckel; en producción se instala en el de Sendwave.</p><span class="chip">Listo · falta el workspace de Sendwave</span></div>
     <div class="tarjeta"><h3>Monday</h3><p>Al registrarse el link publicado, se crea o actualiza el ítem en el tablero de campañas. Se acaba el copiar links a mano.</p><span class="chip">Fase 1 · token de Monday</span></div>
     <div class="tarjeta"><h3>Modash</h3><p>Alcance, engagement y las publicaciones detectadas por el active listening llegan al dashboard, por influencer y por código promocional. El Excel de ROI y CAC se alimenta solo.</p><span class="chip">Fase 2 · API de Modash</span></div>
     <div class="tarjeta"><h3>WhatsApp y correo</h3><p>Aviso al influencer cuando su video necesita cambios o ya puede publicar, y a Brand cuando hay videos esperando. WhatsApp por la API oficial de Meta.</p><span class="chip">Fase 2 · Meta Business de Sendwave</span></div>
