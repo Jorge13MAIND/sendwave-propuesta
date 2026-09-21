@@ -41,7 +41,7 @@
       <a class="btn btn-linea" href="#inversion">Ver la inversión</a>
     </div>
     <ul class="hero-datos">
-      <li><b>2 min</b><span>del video subido al veredicto con marcas de tiempo</span></li>
+      <li><b>1 min</b><span>del video subido al veredicto con marcas de tiempo</span></li>
       <li><b>8 países</b><span>reglas globales y bancos receptores por país</span></li>
       <li><b>ES · EN</b><span>el mismo video explicado a LatAm y a Brand</span></li>
     </ul>
@@ -73,7 +73,7 @@
     <div>
       <h3>El flujo de hoy</h3>
       <ol class="flujo flujo-hoy">
-        <li>El influencer manda el video al grupo de WhatsApp de su campaña.</li>
+        <li>El influencer manda el video al grupo de WhatsApp de su campaña, junto con las dudas del día.</li>
         <li>Alguien del equipo LatAm lo ve, pide cambios, espera la versión nueva.</li>
         <li>Lo sube a Slack para el segundo OK de la Senior Brand Manager, que no habla español.</li>
         <li>Regresa al influencer: "ya puedes publicar".</li>
@@ -85,7 +85,7 @@
       <h3>Las tres fricciones, en el orden que las puso Jorge</h3>
       <div class="fricciones">
         <div class="friccion"><span class="n">1</span><div><b>Revisar y aprobar los videos.</b> Horas viendo TikToks para encontrar la frase que no se puede decir. Y la persona que da el OK final los ve sin entender el idioma.</div></div>
-        <div class="friccion"><span class="n">2</span><div><b>Saturación de canales.</b> Un grupo de WhatsApp por campaña, un canal de Slack, y ningún lugar que diga cuántos videos están esperando y desde cuándo.</div></div>
+        <div class="friccion"><span class="n">2</span><div><b>Saturación de canales.</b> Un grupo de WhatsApp por campaña, un canal de Slack, y ningún lugar que diga cuántos videos están esperando y desde cuándo. El grupo de campaña se queda para hablar con el influencer; lo que sale de ahí es la aprobación.</div></div>
         <div class="friccion"><span class="n">3</span><div><b>Carga manual repetida.</b> La misma información en WhatsApp, Slack, Monday y Excel, tecleada por las mismas personas.</div></div>
       </div>
       <p class="cita">"Todo el tiempo nos traen de los huevos con no mencionar algo que se pueda malinterpretar como publicidad engañosa, porque nos acaban multando."</p>
@@ -121,12 +121,12 @@
     <div class="paso">
       <span class="n">5</span>
       <h3>Si pasa, el equipo da el OK</h3>
-      <p>Primer OK del equipo LatAm, OK final de Brand. Cat lo ve en inglés: resumen, transcripción traducida y hallazgos. Ve el video con los marcadores en la línea de tiempo y decide en un clic: aprobar, pedir cambios o rechazar, con nota.</p>
+      <p>Con la moderación automática encendida, lo que pasa queda aprobado y lo que falla regresa al influencer con sus motivos. Con el interruptor apagado, el equipo LatAm da el primer OK y Brand el final. Quien aprueba en Reino Unido lo ve todo en inglés: resumen, transcripción traducida y hallazgos, también en el aviso de Slack.</p>
     </div>
     <div class="paso">
       <span class="n">6</span>
       <h3>Publica y se registra</h3>
-      <p>El influencer pega el link publicado. Queda guardado (lo pide la CFPB), se crea en Monday y Slack recibe el aviso. Alcance y engagement llegan de Modash al dashboard en la fase 2.</p>
+      <p>Al aprobarse, el hub escribe el caption sugerido con el disclaimer obligatorio, el código, el envío mínimo y la fecha de vigencia, listo para copiar. El influencer pega el link publicado; queda guardado (lo pide la CFPB), se crea en Monday y Slack recibe el aviso. Alcance y engagement llegan de Modash al dashboard en la fase 2.</p>
     </div>
   </div>
   <div class="principio">
@@ -185,31 +185,34 @@
 <!-- 5 · Reglas por país -->
 <section class="seccion seccion-crema2" id="reglas">
   <p class="ojo">04 · Reglas por país, no un prompt</p>
-  <h2>Los outlines generales aplican a toda LatAm. Los bancos cambian por país. El sistema sabe de dónde es cada influencer.</h2>
+  <h2>Las reglas ya son las suyas, cargadas del onboarding de México. Los bancos cambian por país.</h2>
   <div class="dos">
     <div class="tarjeta">
-      <h3>Globales (toda la región)</h3>
+      <h3>Globales, del onboarding de Sendwave</h3>
       <table class="tabla">
-        <tr><td class="mono">G01</td><td>No mencionar el tipo de cambio ni una cifra</td><td><span class="sev sev-block">bloquea</span></td></tr>
-        <tr><td class="mono">G02</td><td>No prometer velocidad absoluta ("al instante", "en segundos")</td><td><span class="sev sev-block">bloquea</span></td></tr>
-        <tr><td class="mono">G03</td><td>No decir "gratis" ni "sin comisiones"</td><td><span class="sev sev-block">bloquea</span></td></tr>
-        <tr><td class="mono">G04</td><td>No garantizar entrega ni resultados</td><td><span class="sev sev-block">bloquea</span></td></tr>
-        <tr><td class="mono">G05</td><td>Divulgar que es publicidad (#ad, #publicidad)</td><td><span class="sev sev-block">bloquea</span></td></tr>
-        <tr><td class="mono">G06</td><td>Decir o mostrar el código promocional exacto</td><td><span class="sev sev-block">bloquea</span></td></tr>
-        <tr><td class="mono">G07</td><td>No comparar nombrando competidores</td><td><span class="sev sev-warn">avisa</span></td></tr>
-        <tr><td class="mono">G08</td><td>Contenido apropiado para la marca (audio e imagen)</td><td><span class="sev sev-block">bloquea</span></td></tr>
-        <tr><td class="mono">G11</td><td>No presentar a Sendwave como banco ni "asegurado"</td><td><span class="sev sev-block">bloquea</span></td></tr>
+        <tr><td class="mono">G01</td><td>Tipo de cambio sin cifras. Sí se puede decir "excelente tipo de cambio"</td><td><span class="sev sev-block">bloquea</span></td></tr>
+        <tr><td class="mono">G02</td><td>Velocidad sin promesas: "rápido" o "veloz", nunca un tiempo concreto</td><td><span class="sev sev-block">bloquea</span></td></tr>
+        <tr><td class="mono">G03</td><td>Nada de "gratis" ni "sin comisiones"</td><td><span class="sev sev-block">bloquea</span></td></tr>
+        <tr><td class="mono">G04</td><td>Seguridad sin absolutos: "seguro" sí, "100% seguro" y "totalmente" no</td><td><span class="sev sev-block">bloquea</span></td></tr>
+        <tr><td class="mono">G05</td><td>Divulgar que es publicidad</td><td><span class="sev sev-block">bloquea</span></td></tr>
+        <tr><td class="mono">G06</td><td>Código promocional exacto y link único, con el envío mínimo</td><td><span class="sev sev-block">bloquea</span></td></tr>
+        <tr><td class="mono">G07</td><td>Ningún competidor por su nombre</td><td><span class="sev sev-block">bloquea</span></td></tr>
+        <tr><td class="mono">G11</td><td>Sendwave no es un banco; sí es un servicio autorizado y regulado</td><td><span class="sev sev-block">bloquea</span></td></tr>
+        <tr><td class="mono">G12</td><td>Sin superlativos: nada de "la mejor tasa" ni "la más rápida"</td><td><span class="sev sev-block">bloquea</span></td></tr>
+        <tr><td class="mono">G13</td><td>Etiquetar a @sendwaveapp_latam en toda publicación</td><td><span class="sev sev-block">bloquea</span></td></tr>
+        <tr><td class="mono">G14</td><td>Disclaimer del tipo de cambio en texto visible sobre el video</td><td><span class="sev sev-block">bloquea</span></td></tr>
+        <tr><td class="mono">G15</td><td>Vigencia del código y disclaimer largo en el caption</td><td><span class="sev sev-warn">avisa</span></td></tr>
       </table>
     </div>
     <div class="tarjeta">
       <h3>Por país (ejemplo)</h3>
-      <div class="pais-ej"><b><span class="cc">MX</span> México</b><p>Depósito a BBVA, Banorte, Santander, Citibanamex, HSBC, Scotiabank, Banco Azteca, BanCoppel. Retiro en efectivo en OXXO y Banorte.</p></div>
+      <div class="pais-ej"><b><span class="cc">MX</span> México</b><p>Depósito a Banorte, BBVA México (Bancomer), Citibanamex, Compartamos, HSBC, Inbursa, Santander, Scotiabank, Banco Azteca y Bancoppel. Retiro en efectivo en Walmart, Bodega Aurrera, Elektra, Farmacias Guadalajara, OXXO, Soriana, Banorte y BBVA. Tarifas: 1.99 USD por transferencia bancaria, 2.99 USD por retiro en efectivo.</p></div>
       <div class="pais-ej"><b><span class="cc">GT</span> Guatemala</b><p>Depósito a Banrural, Banco Industrial, BAM, G&amp;T Continental. Retiro en efectivo en Banco Industrial.</p></div>
       <div class="pais-ej"><b><span class="cc">DO</span> República Dominicana</b><p>Depósito a Banco Popular, Banreservas, BHD, Scotiabank RD. Retiro en puntos autorizados.</p></div>
-      <p class="chico muted">Listas preliminares tomadas de información pública. Si un influencer de Guatemala dice "Banorte", la IA lo marca (regla C01). El administrador corrige la lista desde el hub, sin código.</p>
+      <p class="chico muted">La lista de México es la oficial de su onboarding. Las de los demás países son preliminares hasta que nos pasen su material. Si un influencer de Guatemala nombra un banco mexicano, la IA lo marca (regla C01). El administrador corrige la lista desde el hub, sin código.</p>
     </div>
   </div>
-  <p class="nota">Las reglas G01 a G03 salen directo de la acción de la CFPB contra Sendwave en 2023 (claims de "instantly", "in 30 seconds" y "no fees"). La G05 de la FTC y de la guía de PROFECO para influencers. Todo es editable y se sustituye por la guía interna de Sendwave.</p>
+  <p class="nota">Estas reglas están cargadas del documento "Influencer Onboarding México 2026" de Sendwave y de su playbook, más lo que corrigió el equipo en la sesión del 18 de septiembre. Las de los otros países se cargan en la auditoría. Todo es editable desde el hub, sin tocar código.</p>
 </section>
 
 <!-- 6 · Para cada quien -->
@@ -268,24 +271,24 @@
 <!-- 9 · Plan -->
 <section class="seccion seccion-cacao" id="plan">
   <p class="ojo">08 · Plan</p>
-  <h2>Tres semanas para el piloto. Tres más para las integraciones.</h2>
+  <h2>Una a dos semanas de auditoría. La primera versión completa en cuatro a seis semanas.</h2>
   <div class="fases">
     <div class="fase">
-      <p class="ojo">Fase 1 · Piloto</p>
-      <h3>Portal, pre-aprobación con IA y revisión humana</h3>
+      <p class="ojo">Etapa 1 · Auditoría y puesta en marcha</p>
+      <h3>De los lineamientos al sistema encendido</h3>
       <table class="tabla tabla-plan">
-        <tr><td>Semana 1</td><td>Sesión de arranque con Mariano: reglas oficiales por país, guía de onboarding, criterios de verificación. Alta de la infraestructura en cuentas de Sendwave. Slack conectado.</td></tr>
-        <tr><td>Semana 2</td><td>Reglas cargadas y calibradas con 20 videos reales ya aprobados o rechazados por el equipo (medimos cuántos coincide). Historias con foto. Monday conectado. Roles y accesos del equipo.</td></tr>
-        <tr><td>Semana 3</td><td>Prueba con 5 a 10 influencers reales de dos países. Ajustes. Capacitación de 45 minutos al equipo y guía de una página para el influencer. Encendido.</td></tr>
+        <tr><td>Semanas 1 y 2</td><td><b>Auditoría.</b> Sesiones con el equipo para levantar los lineamientos de cada país, el proceso de verificación, los manuales operativos y los parámetros. Inventario de accesos y decisión de dónde viven los datos. Alta de la infraestructura en cuentas de Sendwave. Es la etapa que define todo lo demás y termina con las reglas escritas y firmadas.</td></tr>
+        <tr><td>Semana 3</td><td>Reglas cargadas y calibradas con 20 videos reales que el equipo ya aprobó o rechazó, para medir en cuántos coincide la IA. Slack de Sendwave conectado. Roles y accesos del equipo. Historias con foto.</td></tr>
+        <tr><td>Semana 4</td><td>Monday conectado. Caption automático por campaña. Prueba con 5 a 10 influencers reales de dos países, capacitación de 45 minutos y guía de una página para el influencer. Encendido.</td></tr>
       </table>
-      <p><b>Entrega:</b> el hub en producción en cuentas de Sendwave, con las reglas oficiales, Slack y Monday, el historial y el tablero de revisión. 30 días de acompañamiento incluidos.</p>
+      <p><b>Entrega:</b> el hub en producción en cuentas de Sendwave, con los lineamientos por país documentados y cargados, Slack y Monday, el historial y el tablero de revisión. 30 días de acompañamiento incluidos.</p>
     </div>
     <div class="fase">
-      <p class="ojo">Fase 2 · Integraciones y visibilidad</p>
+      <p class="ojo">Etapa 2 · Integraciones y visibilidad</p>
       <h3>Modash, avisos y el dashboard de resultados</h3>
       <table class="tabla tabla-plan">
-        <tr><td>Semanas 4 y 5</td><td>Modash al hub: alcance, engagement y publicaciones por influencer y por código. Dashboard de ROI y CAC por región que reemplaza el Excel. Avisos por correo.</td></tr>
-        <tr><td>Semana 6</td><td>WhatsApp por la API oficial (si Meta Business ya está verificado): avisos al influencer y a Brand. Reporte semanal automático a dirección. Cierre.</td></tr>
+        <tr><td>Semanas 5 y 6</td><td>Modash al hub: alcance, engagement y publicaciones por influencer y por código. Dashboard de ROI y CAC por región que reemplaza el Excel. Avisos por correo.</td></tr>
+        <tr><td>Semana 7</td><td>WhatsApp por la API oficial (si Meta Business ya está verificado): avisos al influencer y a Brand. Reporte semanal automático a dirección. Cierre.</td></tr>
       </table>
       <p><b>Entrega:</b> el equipo deja de copiar datos entre plataformas; dirección ve resultados por campaña sin pedirlos.</p>
     </div>
@@ -299,23 +302,25 @@
   <h2>Un precio cerrado por fase. Sin sorpresas.</h2>
   <div class="precios">
     <div class="precio">
-      <p class="ojo">Fase 1 · Piloto</p>
+      <p class="ojo">Etapa 1 · Auditoría y puesta en marcha</p>
       <div class="monto">USD 22,000</div>
-      <p class="chico">3 semanas · 50% al arrancar, 50% al encender</p>
+      <p class="chico">4 semanas, de las cuales 1 a 2 son de auditoría · 50% al arrancar, 50% al encender</p>
       <ul class="palomas chico">
+        <li>Auditoría de procesos, lineamientos y datos</li>
         <li>Portal del influencer y cola de revisión</li>
         <li>IA: transcripción, frames, reglas por país</li>
         <li>Doble aprobación, roles, ES/EN</li>
         <li>Slack y Monday</li>
         <li>Historial y evidencia de cumplimiento</li>
         <li>Calibración con 20 videos reales</li>
+        <li>Caption automático con el disclaimer</li>
         <li>Capacitación y 30 días de acompañamiento</li>
       </ul>
     </div>
     <div class="precio destacado">
-      <p class="ojo">Fase 2 · Integraciones</p>
+      <p class="ojo">Etapa 2 · Integraciones</p>
       <div class="monto">USD 18,000</div>
-      <p class="chico">3 semanas · 50% al arrancar, 50% al entregar</p>
+      <p class="chico">2 a 3 semanas · 50% al arrancar, 50% al entregar</p>
       <ul class="palomas chico">
         <li>Modash al hub por influencer y código</li>
         <li>Dashboard de ROI y CAC por región</li>
@@ -330,6 +335,7 @@
       <p class="chico">desde el encendido de la fase 1</p>
       <ul class="palomas chico">
         <li>Monitoreo y soporte en horario LatAm</li>
+        <li>Lineamientos de países nuevos cargados</li>
         <li>Ajustes de reglas cuando cambie el regulador o un país</li>
         <li>Hasta 600 piezas revisadas al mes</li>
         <li>Mejoras menores sin cotizar</li>

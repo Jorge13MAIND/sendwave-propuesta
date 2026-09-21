@@ -1,10 +1,12 @@
 // Verificador de guion en vivo (seis reglas de ejemplo, sin servidor) y calculadora de horas.
 (function () {
   const reglas = [
-    { code: "G01", sev: "block", re: /(tipo de cambio|exchange rate)[^.]{0,40}\d|\d+[.,]\d+\s*(pesos|quetzales|lempiras|soles|reales)\s*por\s*(d[óo]lar|euro)|el d[óo]lar est[áa] a \d+([.,]\d+)?/i, msg: "Menciona una cifra de tipo de cambio. Di que se ve en la app antes de enviar." },
+    { code: "G01", sev: "block", re: /(tipo de cambio|exchange rate)[^.]{0,40}\d|\d+[.,]\d+\s*(pesos|quetzales|lempiras|soles|reales)\s*por\s*(d[óo]lar|euro)|el d[óo]lar est[áa] a \d+([.,]\d+)?/i, msg: "Menciona una cifra de tipo de cambio. Puedes decir 'un excelente tipo de cambio', pero sin números." },
     { code: "G02", sev: "block", re: /\b(al instante|instant[áa]neo|instantly|en segundos|in seconds|en 30 segundos)\b/i, msg: "Promete velocidad absoluta. Cambia a 'rápido' o 'puede llegar en minutos, según el banco'." },
     { code: "G03", sev: "block", re: /\b(gratis|sin comisi[óo]n(es)?|cero comisiones|no cobran|no fees|free)\b/i, msg: "Dice que es gratis o sin comisiones. Cambia a 'comisiones bajas: ves el costo total antes de enviar'." },
-    { code: "G04", sev: "block", re: /\b(garantizado|garantizada|guaranteed|siempre llega|nunca falla)\b/i, msg: "Garantiza entrega o resultado. Habla de tu experiencia, sin garantías." },
+    { code: "G04", sev: "block", re: /\b(garantizado|garantizada|guaranteed|siempre llega|nunca falla|100 ?% segur[ao]|totalmente)\b/i, msg: "Usa un absoluto de seguridad. Di solo 'seguro', sin '100%' ni 'totalmente'." },
+    { code: "G12", sev: "block", re: /\b(la mejor tasa|el mejor tipo de cambio|la m[áa]s r[áa]pida|la m[áa]s segura|la mejor (app|aplicaci[óo]n|opci[óo]n))\b/i, msg: "Posiciona a Sendwave como la mejor. El tono tiene que ser neutro." },
+    { code: "G13", sev: "block", re: /@?sendwaveapp[_ ]?latam/i, msg: "", invertir: true },
     { code: "G07", sev: "warn", re: /\b(western union|remitly|xoom|moneygram)\b/i, msg: "Nombra a un competidor. Quita la comparación." },
   ];
   const promo = "JORGE10";
@@ -15,8 +17,12 @@
   function evaluar() {
     const t = guion.value;
     const h = [];
-    for (const r of reglas) { const m = t.match(r.re); if (m) h.push({ ...r, ev: m[0] }); }
+    for (const r of reglas) {
+      if (r.invertir) { if (!r.re.test(t)) h.push({ ...r, ev: "sin @sendwaveapp_latam", msg: "No etiqueta a @sendwaveapp_latam. Toda publicación tiene que mencionarla." }); continue; }
+      const m = t.match(r.re); if (m) h.push({ ...r, ev: m[0] });
+    }
     if (!divulg.test(t)) h.push({ code: "G05", sev: "block", ev: "sin #publicidad", msg: "No dice que es publicidad. Agrega #publicidad o 'colaboración pagada con Sendwave'." });
+    if (!/(gana dinero a trav[ée]s del tipo de cambio|sujetas? a variaci[óo]n)/i.test(t)) h.push({ code: "G14", sev: "block", ev: "sin el disclaimer del tipo de cambio", msg: "Falta en texto visible: Sendwave gana dinero a través del tipo de cambio. Las tasas de cambio (FX) están sujetas a variación." });
     if (!t.toUpperCase().replace(/\s+/g, "").includes(promo)) h.push({ code: "G06", sev: "block", ev: "código " + promo + " ausente", msg: "No menciona el código promocional registrado (" + promo + ")." });
     const bloqueos = h.filter((x) => x.sev === "block").length;
     ver.className = "veredicto " + (bloqueos ? "veredicto-changes" : "veredicto-pass");
